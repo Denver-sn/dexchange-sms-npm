@@ -1,0 +1,15 @@
+{
+  "name": "dexchange-sms",
+  "version": "1.0.0",
+  "description": "DEXCHANGE-SMS npm package",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DENVER",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "dexchange-sms": "file:dexchange-sms-1.0.0.tgz"
+  }
+}
