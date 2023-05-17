@@ -1,6 +1,6 @@
 {
   "name": "dexchange-sms",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "DEXCHANGE-SMS npm package",
   "main": "src/index.js",
   "scripts": {
