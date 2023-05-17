@@ -1,4 +1,4 @@
-const DSMS = require('dexchange-sms');
+const DSMS = require('dsms');
 const dsms = new DSMS('YOUR_API_KEY');
 
 

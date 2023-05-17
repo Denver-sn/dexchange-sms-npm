@@ -9,7 +9,7 @@ DSMS (DEXCHANGE-SMS) is a Node.js module that provides a simple way to interact 
 ## Installation
 
 ```bash
-npm install dexchange-sms
+npm install dsms
 ```
 
 ## Usage
