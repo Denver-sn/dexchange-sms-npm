@@ -3,7 +3,7 @@
 
 DSMS (DEXCHANGE-SMS) is a Node.js module that provides a simple way to interact with the Dexchange SMS API. With DSMS, you can send SMS messages and authenticate users via SMS.
 
-[https://dexchange-sms.com](https://dexchange-sms.com/auth/signup)
+[https://dexchange-sms.com](https://dexchange-sms.com/)
 
 
 ## Installation
@@ -14,7 +14,7 @@ npm install dexchange-sms
 
 ## Usage
 
-### To use DSMS, you need to have an API key. You can get one by signing up at [Dexchange](https://dexchange-sms.com/dashboard/api).
+### To use DSMS, you need to have an API key. You can get one by signing up at [Dexchange](https://dexchange-sms.com/auth/signup).
 
 ```javascript
 const DSMS = require('dsms');

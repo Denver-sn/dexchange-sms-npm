@@ -1,6 +1,6 @@
 {
   "name": "dexchange-sms",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "DEXCHANGE-SMS npm package",
   "main": "src/index.js",
   "scripts": {
@@ -9,7 +9,6 @@
   "author": "DENVER",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.4.0",
-    "dexchange-sms": "file:dexchange-sms-1.0.0.tgz"
+    "axios": "^1.4.0"
   }
 }
