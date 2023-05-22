@@ -9,6 +9,9 @@ class DSMS {
   };
   constructor(apiKey) {
     this.apiKey = apiKey;
+    this.headers = {
+      Authorization: `Bearer ${this.apiKey}`,
+    };
   }
 
   async sendSMS(params) {
@@ -17,14 +20,11 @@ class DSMS {
     if (!Array.isArray(params.number))
       throw new Error("Number must be an array");
 
-    const headers = {
-      Authorization: `Bearer ${this.apiKey}`,
-    };
     try {
       const response = await axios.post(
         `${this.API_URL}${this.ROUTES.SMS}`,
         params,
-        { headers: headers }
+        { headers: this.headers }
       );
       return response;
     } catch (error) {
@@ -40,14 +40,11 @@ class DSMS {
       !typeof params.number === "number"
     )
       throw new Error("Number must be a string or an integer");
-    const headers = {
-      Authorization: `Bearer ${this.apiKey}`,
-    };
     try {
       const response = await axios.post(
         `${this.API_URL}${this.ROUTES.OPT}`,
         params,
-        { headers: headers }
+        { headers: this.headers }
       );
       return response;
     } catch (error) {
@@ -71,15 +68,11 @@ class DSMS {
     )
       throw new Error("Service must be a string or an integer");
 
-    const headers = {
-      Authorization: `Bearer ${this.apiKey}`,
-    };
-
     try {
       const response = await axios.post(
         `${this.API_URL}${this.ROUTES.VERIFY}`,
         params,
-        { headers: headers }
+        { headers: this.headers }
       );
       return response;
     } catch (error) {
