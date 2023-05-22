@@ -1,6 +1,6 @@
 {
   "name": "dsms",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "DEXCHANGE-SMS npm package",
   "homepage": "https://github.com/Denver-sn/dexchange-sms-npm",
   "main": "src/index.js",

@@ -5,6 +5,7 @@ DSMS (DEXCHANGE-SMS) is a Node.js module that provides a simple way to interact 
 
 [https://dexchange-sms.com](https://dexchange-sms.com/)
 
+## Special thanks to [Arona GUEYE](https://github.com/arona504)  🚀
 
 ## Installation
 
@@ -64,6 +65,8 @@ Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
+
+
 
 ## License
 
