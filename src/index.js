@@ -11,16 +11,12 @@ class DSMS {
     this.apiKey = apiKey;
   }
 
-  async sendSMS(data) {
-    if (!data.number || !data.signature || !data.content)
+  async sendSMS(params) {
+    if (!params.number || !params.signature || !params.content)
       throw new Error("Missing parameters");
-    if (!Array.isArray(data.number)) throw new Error("Number must be an array");
+    if (!Array.isArray(params.number))
+      throw new Error("Number must be an array");
 
-    const params = {
-      number: data.number,
-      signature: data.signature,
-      content: data.content,
-    };
     const headers = {
       Authorization: `Bearer ${this.apiKey}`,
     };
@@ -35,15 +31,14 @@ class DSMS {
     return response;
   }
 
-  async sendAuthSMS(data) {
-    if (!data.number || !data.service) throw new Error("Missing parameters");
-    if (!typeof data.number === "string" || !typeof data.number === "number")
+  async sendAuthSMS(params) {
+    if (!params.number || !params.service)
+      throw new Error("Missing parameters");
+    if (
+      !typeof params.number === "string" ||
+      !typeof params.number === "number"
+    )
       throw new Error("Number must be a string or an integer");
-    const params = {
-      number: data.number,
-      service: data.service,
-      lang: data.lang,
-    };
     const headers = {
       Authorization: `Bearer ${this.apiKey}`,
     };
@@ -58,21 +53,22 @@ class DSMS {
     return response;
   }
 
-  async verifyAuthSMS(data) {
-    if (!data.number || !data.service || !data.otp)
+  async verifyAuthSMS(params) {
+    if (!params.number || !params.service || !params.otp)
       throw new Error("Missing parameters");
-    if (!typeof data.number === "string" || !typeof data.number === "number")
+    if (
+      !typeof params.number === "string" ||
+      !typeof params.number === "number"
+    )
       throw new Error("Number must be a string or an integer");
-    if (!typeof data.otp === "string" || !typeof data.otp === "number")
+    if (!typeof params.otp === "string" || !typeof params.otp === "number")
       throw new Error("OTP must be a string or an integer");
-    if (!typeof data.service === "string" || !typeof data.service === "number")
+    if (
+      !typeof params.service === "string" ||
+      !typeof params.service === "number"
+    )
       throw new Error("Service must be a string or an integer");
 
-    const params = {
-      number: data.number,
-      service: data.service,
-      otp: data.otp,
-    };
     const headers = {
       Authorization: `Bearer ${this.apiKey}`,
     };
