@@ -5,13 +5,17 @@ class DSMS {
   static ROUTES = {
     SMS: "send/sms/",
     OPT: "send/otp/",
-    VERIFY: "verify/otp",
+    VERIFY: "verify/otp/",
   };
   constructor(apiKey) {
     this.apiKey = apiKey;
     this.headers = {
       Authorization: `Bearer ${this.apiKey}`,
     };
+    this.client = axios.create({
+      baseURL: this.BASE_API_URL,
+      headers: this.headers,
+    });
   }
 
   async sendSMS(params) {
@@ -21,11 +25,7 @@ class DSMS {
       throw new Error("Number must be an array");
 
     try {
-      const response = await axios.post(
-        `${this.API_URL}${this.ROUTES.SMS}`,
-        params,
-        { headers: this.headers }
-      );
+      const response = await this.client.post(this.ROUTES.SMS, params);
       return response;
     } catch (error) {
       throw error.response.data.message;
@@ -41,11 +41,7 @@ class DSMS {
     )
       throw new Error("Number must be a string or an integer");
     try {
-      const response = await axios.post(
-        `${this.API_URL}${this.ROUTES.OPT}`,
-        params,
-        { headers: this.headers }
-      );
+      const response = await this.client.post(this.ROUTES.OPT, params);
       return response;
     } catch (error) {
       throw error.response.data.message;
@@ -69,11 +65,7 @@ class DSMS {
       throw new Error("Service must be a string or an integer");
 
     try {
-      const response = await axios.post(
-        `${this.API_URL}${this.ROUTES.VERIFY}`,
-        params,
-        { headers: this.headers }
-      );
+      const response = await this.client.post(this.ROUTES.VERIFY, params);
       return response;
     } catch (error) {
       throw error.response.data.message;
