@@ -20,15 +20,16 @@ class DSMS {
     const headers = {
       Authorization: `Bearer ${this.apiKey}`,
     };
-    const response = await axios
-      .post(`${this.API_URL}${this.ROUTES.SMS}`, params, { headers: headers })
-      .then((response) => {
-        return response.data;
-      })
-      .catch((error) => {
-        throw error.response.data.message;
-      });
-    return response;
+    try {
+      const response = await axios.post(
+        `${this.API_URL}${this.ROUTES.SMS}`,
+        params,
+        { headers: headers }
+      );
+      return response;
+    } catch (error) {
+      throw error.response.data.message;
+    }
   }
 
   async sendAuthSMS(params) {
@@ -42,15 +43,16 @@ class DSMS {
     const headers = {
       Authorization: `Bearer ${this.apiKey}`,
     };
-    const response = await axios
-      .post(`${this.API_URL}${this.ROUTES.OPT}`, params, { headers: headers })
-      .then((response) => {
-        return response.data;
-      })
-      .catch((error) => {
-        throw error.response.data.message;
-      });
-    return response;
+    try {
+      const response = await axios.post(
+        `${this.API_URL}${this.ROUTES.OPT}`,
+        params,
+        { headers: headers }
+      );
+      return response;
+    } catch (error) {
+      throw error.response.data.message;
+    }
   }
 
   async verifyAuthSMS(params) {
@@ -73,17 +75,16 @@ class DSMS {
       Authorization: `Bearer ${this.apiKey}`,
     };
 
-    const response = await axios
-      .post(`${this.API_URL}${this.ROUTES.VERIFY}`, params, {
-        headers: headers,
-      })
-      .then((response) => {
-        return response.data;
-      })
-      .catch((error) => {
-        throw error.response.data.message;
-      });
-    return response;
+    try {
+      const response = await axios.post(
+        `${this.API_URL}${this.ROUTES.VERIFY}`,
+        params,
+        { headers: headers }
+      );
+      return response;
+    } catch (error) {
+      throw error.response.data.message;
+    }
   }
 }
 
