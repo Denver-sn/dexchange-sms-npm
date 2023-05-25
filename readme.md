@@ -1,3 +1,9 @@
+![COVER](https://github.com/GalsenDev221/made.in.senegal/blob/master/assets/cover.png)
+
+<p align="center">
+<a href="https://github.com/GalsenDev221/made.in.senegal"><img src="https://github.com/GalsenDev221/made.in.senegal/blob/master/assets/badge.svg"></a>
+</p>
+
 ## DSMS - Node.js module for Dexchange SMS API
 
 
