@@ -13,7 +13,7 @@ class DSMS {
       Authorization: `Bearer ${this.apiKey}`,
     };
     this.client = axios.create({
-      baseURL: this.BASE_API_URL,
+      baseURL: DSMS.BASE_API_URL,
       headers: this.headers,
     });
   }
